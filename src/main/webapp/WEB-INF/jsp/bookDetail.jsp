@@ -52,8 +52,8 @@
         <span class="book-descr">
 				<p>商品描述<a class="book-desc">${book.getDescription()}</a></p>
 				<p>上书时间<a class="upload-time">2018-03-20</a></p>
-			</span>
-        <span class="buy-now">立即联系卖家进行购买</span>
+		</span>
+        <span class="buy-now" id="buy">立即联系卖家进行购买</span>
     </div> <!-- book-info-end -->
 
     <div id="seller-info">
@@ -78,23 +78,33 @@
     <a href="#">©2018-2019 二手书交易</a>
     <a href="#">意见反馈&nbsp;&nbsp;&nbsp;联系我们&nbsp;&nbsp;&nbsp;隐私权声明&nbsp;&nbsp;&nbsp;使用条款</a>
 </footer>
+<script src="<%=request.getContextPath()%>/js/jquery-3.2.js"></script>
+<script src="<%=request.getContextPath()%>/js/upload.js"></script>
+<script src="<%=request.getContextPath()%>/js/jquery.form.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/js/session.js"></script>
-<script type="text/javascript">
-    $(function(){
-        //菜单特效
-        var index = 0;
-        $("#book-menu-toggle").on("click",function(){
-            if (index ===0 ) {
-                $("#book-menu").css("left","1px");
-                $(this).css("left","178px");
-                index =1;
-            }else{
-                $("#book-menu").css("left","-180px");
-                $(this).css("left","1px");
-                index=0;
-            }
-        });
-    })
+<script>
+    $("#buy").click(function (event){
+        var price = ${book.getPrice()};
+        var ownMoney = ${user.getMoney()};
+        if(price<=ownMoney){
+            alert("购买成功");
+            $("#buy").ajaxSubmit({
+                type:"POST",
+                url:"/books/${id}",
+                async:false,
+                dataType:"json",
+                success:function(result){
+                    if (result.resultCode == 200){
+                        alert("支付金额：${book.getPrice()}");
+                    }else {
+                        alert(result.message);
+                    }
+                }
+            });
+        }else{
+            alert("余额不足，购买失败");
+        }
+    });
 </script>
 </body>
 </html>

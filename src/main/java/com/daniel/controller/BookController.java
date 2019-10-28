@@ -11,6 +11,7 @@ import com.daniel.service.BookImageService;
 import com.daniel.service.BookService;
 import com.daniel.service.CategoryService;
 import com.daniel.service.UserService;
+import com.google.inject.internal.util.$Strings;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -39,6 +40,32 @@ public class BookController {
 
     // 日志文件
     private static final Logger log = Logger.getLogger(BookController.class);
+
+    /**
+     * @param request 用于获取当前用户信息
+     * @param id 要购买的图书ID数组
+     */
+    @RequestMapping(value = "/{id}",method = RequestMethod.POST)
+    public Result buyBook(HttpServletRequest request,@PathVariable("id") String id){
+        int intId = Integer.parseInt(id);
+        Book curBook = bookService.get(intId);
+        User user = (User) request.getSession().getAttribute("user");
+        // 获取当前图书的图片名称与存放路径
+        String imageName = bookImageService.getByBookId(intId).getId() + ".jpg";
+        String imagePath = request.getServletContext().getRealPath("/img/book-list/article/");
+        File filePath = new File(imagePath, imageName);
+
+        // 删除图片
+        if (filePath.exists()){
+            filePath.delete();
+        }
+
+        // 删除数据库中的图书
+        bookImageService.deleteByBookId(intId);
+        bookService.delete(intId);
+        user.setMoney(user.getMoney()-curBook.getPrice());
+        return ResultGenerator.genSuccessResult();
+    }
 
     /**
      *上传求书信息
