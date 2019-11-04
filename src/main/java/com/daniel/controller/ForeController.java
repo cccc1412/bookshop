@@ -89,5 +89,4 @@ public class ForeController {
         mav.addObject("books",books);
         return mav;
     }
-
 }

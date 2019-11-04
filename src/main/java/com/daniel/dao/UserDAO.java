@@ -12,4 +12,6 @@ public interface UserDAO {
 
     User getByStudentid(String studentid);
 
+    void add(User user);
+
 }

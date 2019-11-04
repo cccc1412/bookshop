@@ -14,6 +14,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
+
 @RequestMapping("/users")
 public class UserController {
 
@@ -28,6 +29,11 @@ public class UserController {
         return new ModelAndView("login");
     }
 
+    @RequestMapping("/register")
+    public ModelAndView goRegister(){
+        ModelAndView mav = new ModelAndView("register");
+        return mav;
+    }
     /**
      * 验证登录
      * @param user 用户输入的学号与密码封装成的User对象
@@ -60,5 +66,18 @@ public class UserController {
     public Result logout(HttpServletRequest request) {
         request.getSession().removeAttribute("user");
         return ResultGenerator.genSuccessResult();
+    }
+
+    //注册
+    @RequestMapping(value = "/register",method = RequestMethod.POST)
+    @ResponseBody
+    public Result addUser(@RequestBody User user){
+        if (user != null) {
+            userService.add(user);
+            log.info("request: user/upload , user: " + user.toString());
+            return ResultGenerator.genSuccessResult();
+        } else {
+            return ResultGenerator.genFailResult("信息填写不完整");
+        }
     }
 }

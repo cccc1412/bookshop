@@ -70,6 +70,16 @@ body {
 
 }
 
+.createUser{
+	text-decoration: none;
+	color:#0a7eb3;
+	font-size: 12px;
+	position: absolute;
+	left: 140px;
+
+}
+
+
 #errorInfo{
 	color:red;
 	font-size: 12px;
