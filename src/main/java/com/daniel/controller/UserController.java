@@ -10,8 +10,10 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.io.IOException;
 
 @RestController
 
@@ -72,12 +74,17 @@ public class UserController {
     @RequestMapping(value = "/register",method = RequestMethod.POST)
     @ResponseBody
     public Result addUser(@RequestBody User user){
+    try {
         if (user != null) {
             userService.add(user);
             log.info("request: user/upload , user: " + user.toString());
             return ResultGenerator.genSuccessResult();
         } else {
-            return ResultGenerator.genFailResult("信息填写不完整");
+            return ResultGenerator.genFailResult("请完善注册信息！");
+        }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResultGenerator.genFailResult("该账号已注册！");
         }
     }
 }

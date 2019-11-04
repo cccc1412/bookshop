@@ -28,3 +28,4 @@
 .mvn
 mvnw
 mvnw.cmd
+src/main/resources/jdbc\.properties
