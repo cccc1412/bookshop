@@ -133,6 +133,5 @@
 <script type="text/javascript" src="<%=request.getContextPath()%>/js/jquery-3.2.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/js/myBookshelf.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath()%>/js/session.js"></script>
-
 </body>
 </html>

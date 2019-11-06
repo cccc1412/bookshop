@@ -70,7 +70,7 @@
 			</span>
     </div><!-- seller-info-end -->
     <div id="book-content">
-        <span class="book-tip">目送共由七十四篇散文组成，是为一本极具亲情、感人至深的文集。由父亲的逝世、母亲的苍老、儿子的离开、朋友的牵挂、兄弟的携手共行，写出失败和脆弱、失落和放手，写出缠绵不舍和绝然的虚无。正如作者所说：“我慢慢地、慢慢地了解到，所谓父女母子一场，只不过意味着，你和他的缘分就是今生今世不断地在目送他的背影。</span>
+        <span class="book-tip">${book.getDescription()}</span>
     </div>
 </div><!--  container -->
 <footer>
@@ -83,6 +83,12 @@
 <script type="text/javascript" src="<%=request.getContextPath()%>/js/session.js"></script>
 <script>
     $("#buy").click(function (event){
+        var flag = ${book.getBookType()};
+        if(flag==0){
+            $("#buy").off("click");
+            alert("该书籍不可购买！");
+            return;
+        }
         var price = ${book.getPrice()};
         var ownMoney = ${user.getMoney()};
         if(price<=ownMoney){

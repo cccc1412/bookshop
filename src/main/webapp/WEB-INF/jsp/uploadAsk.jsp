@@ -41,7 +41,7 @@
     <form enctype="multipart/form-data" id="bookForm" class="upload-form">
         <p>
             <span class="pic-icon">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-            上传书图片： <input type="file" name="image">
+            上传书图片： <input type="file" name="image" accept="image/*">
         </p>
         <input type="hidden" name="bookType" value="0">
         <p>
@@ -90,6 +90,7 @@
 
         if (status == "SUCCESS"){
             alert("上传成功");
+            location.href = "/myBookshelf.do";
         }else {
             alert("上传失败");
         }

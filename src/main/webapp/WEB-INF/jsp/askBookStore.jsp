@@ -41,16 +41,13 @@
         <ul class="book-lists">
             <c:forEach items="${books}" var="book" varStatus="bookStatus">
             <li class="book-list">
-                <a href="bookDetail.do?id=${book.getId()}" class="book-pic" target="_blank">
+                <a href="books/${book.getId()}" class="book-pic" target="_blank">
                     <img src="<%=request.getContextPath()%>/img/book-list/article/${book.getBookImage().getId()}.jpg">
                 </a>
                 <a href="#" class="book-info">
                     <h5 class="book-name">${book.getName()}</h5>
                     <span class="book-detail">${book.getDescription()}</span>
                 </a>
-                <span class="book-price">￥${book.getPrice()}
-						<a href="#" class="book-buy">立即下单</a>
-                </span>
             </li>
             </c:forEach>
 

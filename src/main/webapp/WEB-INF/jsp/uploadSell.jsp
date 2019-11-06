@@ -130,6 +130,7 @@
             success:function(result){
                 if (result.resultCode == 200){
                     alert("上传成功");
+                    location.href = "/myBookshelf.do";
                 }else {
                     alert(result.message);
                 }
