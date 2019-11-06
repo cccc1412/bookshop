@@ -16,13 +16,12 @@
             <li><a class="active" href="/home.do">首页</a></li>
             <li><a href="/goBookStore.do">书籍良品</a></li>
             <li><a href="/goAskBookStore.do">求书区</a></li>
-            <li><a href="#">服务区</a></li>
         </ul>
     </div><!-- nav-menu -->
 
     <div class="nav-search">
         <form action="searchBook.do" method="post">
-            <input type="search" class="searchIn" name="name" placeholder="搜图书...">
+            <input type="search" class="searchIn" name="name" placeholder="搜图书..." autocomplete="off" disableautocomplete>
             <button class="search-logo"><img src="<%=request.getContextPath()%>/img/search2.png"></button>
         </form>
     </div>
@@ -47,7 +46,7 @@
         <input type="hidden" name="bookType" value="0">
         <p>
             <span class="name-icon">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-            书&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：<input type="text" name="name">
+            书&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：<input type="text" name="name" autocomplete="off" disableautocomplete>
         </p>
         <p>
             <span class="author-icon">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>

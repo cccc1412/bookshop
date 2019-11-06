@@ -30,7 +30,6 @@
             <li><a href="/home.do">首页</a></li>
             <li><a href="/goBookStore.do">书籍良品</a></li>
             <li><a class="active" href="/goAskBookStore.do">求书区</a></li>
-            <li><a href="#">服务区</a></li>
         </ul>
     </nav>
     <div class="askBook-pic"></div>
