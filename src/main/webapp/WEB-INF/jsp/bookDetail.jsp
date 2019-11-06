@@ -92,7 +92,6 @@
         var price = ${book.getPrice()};
         var ownMoney = ${user.getMoney()};
         if(price<=ownMoney){
-            alert("购买成功");
             $("#buy").ajaxSubmit({
                 type:"POST",
                 url:"/books/${id}",
@@ -100,6 +99,7 @@
                 dataType:"json",
                 success:function(result){
                     if (result.resultCode == 200){
+                        alert("购买成功");
                         alert("支付金额：${book.getPrice()}");
                         location.href = "/home.do";
                     }else {

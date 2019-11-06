@@ -28,7 +28,7 @@ $(function(){
         var name = $(this).attr("id");
         var showName = name.split("-")[0];
         $(this).addClass("active").siblings("span").removeClass("active");
-        $(this).parent().find("#"+showName+"-upload").show().siblings("a").hide();
+        $(this).parent().find("#"+showName+"-upload").show().siblings("a");
         $("#container").find("#"+title).show().siblings("div").hide();
     });
 

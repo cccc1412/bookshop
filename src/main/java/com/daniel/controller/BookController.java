@@ -54,7 +54,7 @@ public class BookController {
         String imageName = bookImageService.getByBookId(intId).getId() + ".jpg";
         String imagePath = request.getServletContext().getRealPath("/img/book-list/article/");
         File filePath = new File(imagePath, imageName);
-
+        int uid = bookService.getUserId(intId);//用户ID,不是学号
         // 删除图片
         if (filePath.exists()){
             filePath.delete();
@@ -64,8 +64,11 @@ public class BookController {
         bookImageService.deleteByBookId(intId);
         bookService.delete(intId);
         // 更新用户信息
-       user.setMoney(user.getMoney()-curBook.getPrice());
+        user.setMoney(user.getMoney()-curBook.getPrice());
+        User sellUser = userService.get(uid);
+        sellUser.setMoney(sellUser.getMoney()+curBook.getPrice());
         userService.update(user);
+        userService.update(sellUser);
         return ResultGenerator.genSuccessResult();
     }
 

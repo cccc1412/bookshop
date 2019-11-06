@@ -138,6 +138,7 @@
             success:function(result){
                 if (result.resultCode == 200){
                     alert("修改成功");
+                    location.href = "/myBookshelf.do";
                 }else {
                     alert(result.message);
                 }

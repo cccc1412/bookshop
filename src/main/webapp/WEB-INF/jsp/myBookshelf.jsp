@@ -113,6 +113,10 @@
                     <img src="img/book-list/article/${askBook.getBookImage().getId()}.jpg">
                 </p>
                 <h5 class="book-name">${askBook.getName()}</h5>
+                <form>
+                    <input type="text" name="book-id" class="book-id" value="${askBook.getId()}">
+                </form>
+                <span class="delete-btn"></span>
                 <a href="/books/renewal/${askBook.getId()}" class="edit-btn"></a>
                 <div class="book-detail">
                     <p>作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;者：<span class="book-author">${askBook.getAuthor()}</span></p>
