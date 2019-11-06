@@ -29,7 +29,6 @@
             <li><a class="active" href="home.do">首页</a></li>
             <li><a href="/goBookStore.do">书籍良品</a></li>
             <li><a href="/goAskBookStore.do">求书区</a></li>
-            <li><a href="#">服务区</a></li>
         </ul>
     </nav>
 
@@ -77,7 +76,7 @@
                         <span class="book-detail">${book.getDescription()}</span>
                     </a>
                     <span class="book-price">￥${book.getPrice()}
-                            <a href="#" class="book-buy">立即下单</a>
+                            <a href="/books/${book.getId()}" class="book-buy">立即下单</a>
                         </span>
                 </li>
                 </c:forEach>

@@ -9,4 +9,5 @@ public interface UserService {
     User getByStudentid(String studnetid);
     void add(User user);
 
+    void update(User user);
 }

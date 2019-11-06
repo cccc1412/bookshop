@@ -221,3 +221,5 @@ INSERT INTO `user` VALUES (2, '1505101', '许玮甯', '549256', 'f', '1321234567
 INSERT INTO `user` VALUES (3, '1505112', '彭于晏', '123456', 'm', '15812345678', '22#A425', '15级信息管理与信息系统');
 
 SET FOREIGN_KEY_CHECKS = 1;
+ALTER TABLE user
+    ADD UNIQUE (studentid)

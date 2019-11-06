@@ -16,7 +16,6 @@
             <li><a class="active" href="/home.do">首页</a></li>
             <li><a href="/goBookStore.do">书籍良品</a></li>
             <li><a href="/goAskBookStore.do">求书区</a></li>
-            <li><a href="#">服务区</a></li>
         </ul>
     </div><!-- nav-menu -->
 
@@ -44,7 +43,9 @@
         <a href="#" class="sex" id="sexText">女</a><img src="<%=request.getContextPath()%>/img/girl.png" id="sex-pic">
     </p>
     <p class="set">
-        <a href="#" class="edit">编辑个人主页</a>
+        <a href="/users/updateUser" class="edit">编辑个人主页</a>
+        <img class="set-icon" src="<%=request.getContextPath()%>/img/setting.png">
+        <a href="/users/changePassword" class="edit">修改密码</a>
         <img class="set-icon" src="<%=request.getContextPath()%>/img/setting.png">
     </p>
     <div class="contact">

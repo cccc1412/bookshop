@@ -4,7 +4,7 @@ $(function(){
     var sexInput = $("#sexInput").val();
     var sexText = document.getElementById("sexText");
     var realSex;
-    if(sexInput == "m"){
+    if(sexInput == "男"){
         realSex = "男";
     }else {
         realSex = "女";

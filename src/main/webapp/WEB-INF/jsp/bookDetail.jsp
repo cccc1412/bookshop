@@ -53,7 +53,7 @@
 				<p>商品描述<a class="book-desc">${book.getDescription()}</a></p>
 				<p>上书时间<a class="upload-time">2018-03-20</a></p>
 		</span>
-        <span class="buy-now" id="buy">立即联系卖家进行购买</span>
+        <span class="buy-now" id="buy">立即购买</span>
     </div> <!-- book-info-end -->
 
     <div id="seller-info">
@@ -96,6 +96,7 @@
                 success:function(result){
                     if (result.resultCode == 200){
                         alert("支付金额：${book.getPrice()}");
+                        location.href = "/home.do";
                     }else {
                         alert(result.message);
                     }

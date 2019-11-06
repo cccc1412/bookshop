@@ -63,7 +63,9 @@ public class BookController {
         // 删除数据库中的图书
         bookImageService.deleteByBookId(intId);
         bookService.delete(intId);
-        user.setMoney(user.getMoney()-curBook.getPrice());
+        // 更新用户信息
+       user.setMoney(user.getMoney()-curBook.getPrice());
+        userService.update(user);
         return ResultGenerator.genSuccessResult();
     }
 

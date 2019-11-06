@@ -87,4 +87,45 @@ public class UserController {
             return ResultGenerator.genFailResult("该账号已注册！");
         }
     }
+
+    @RequestMapping(value = "/updateUser",method = RequestMethod.GET)
+    public ModelAndView goEditUser(){
+        return new  ModelAndView("editUser");
+    }
+
+    @RequestMapping(value = "/changePassword",method = RequestMethod.GET)
+    public ModelAndView goChangePassword(){
+        return new  ModelAndView("changePassword");
+    }
+    @RequestMapping(value = "/changePassword",method = RequestMethod.POST)
+    public Result changePassword(HttpServletRequest request,User user){
+        User cUser = (User) request.getSession().getAttribute("user");
+        if (user != null) {
+            cUser.setPassword(user.getPassword());
+            userService.update(cUser);
+            log.info("request: user/update , user: " + user.toString());
+            return ResultGenerator.genSuccessResult();
+        } else {
+            return ResultGenerator.genFailResult("修改失败");
+        }
+    }
+
+
+    @RequestMapping(value = "/updateUser",method = RequestMethod.POST)
+    public Result editUser(HttpServletRequest request,User user){
+        User cUser = (User) request.getSession().getAttribute("user");
+        if (user != null) {
+            cUser.setAddress(user.getAddress());
+            cUser.setMajor(user.getMajor());
+            cUser.setName(user.getName());
+            cUser.setSex(user.getSex());
+            cUser.setTel(user.getTel());
+            userService.update(cUser);
+            log.info("request: user/update , user: " + user.toString());
+            return ResultGenerator.genSuccessResult();
+        } else {
+            return ResultGenerator.genFailResult("修改失败");
+        }
+    }
+
 }
