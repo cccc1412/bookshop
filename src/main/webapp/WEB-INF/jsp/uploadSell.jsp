@@ -50,7 +50,7 @@
         </p>
         <p>
             <span class="author-icon">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-            作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;者：<input type="text" name="author">
+            作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;者：<input type="text" name="author" autocomplete="off" disableautocomplete>
         </p>
         <p>
             <span class="name-icon">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -60,26 +60,26 @@
             </c:forEach>
         </select>
         </p>
-        <input type="hidden" name="bookType" value="1">
+        <input type="hidden" name="bookType" value="1" >
         <p>
             <span class="origin-icon">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-            书&nbsp;本&nbsp;&nbsp;原&nbsp;价：<input type="text" name="originalPrice">
+            书&nbsp;本&nbsp;&nbsp;原&nbsp;价：<input type="number" name="originalPrice" autocomplete="off" disableautocomplete>
         </p>
         <p>
             <span class="price-icon">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-            书&nbsp;本&nbsp;&nbsp;售&nbsp;价：<input type="text" name="price">
+            书&nbsp;本&nbsp;&nbsp;售&nbsp;价：<input type="number" name="price" autocomplete="off" disableautocomplete>
         </p>
         <p>
             <span class="press-icon">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-            出&nbsp;&nbsp;&nbsp;&nbsp;版&nbsp;&nbsp;&nbsp;社：<input type="text" name="press">
+            出&nbsp;&nbsp;&nbsp;&nbsp;版&nbsp;&nbsp;&nbsp;社：<input type="text" name="press" autocomplete="off" disableautocomplete>
         </p>
         <p>
             <span class="time-icon">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-            出&nbsp;版&nbsp;&nbsp;时&nbsp;间：<input type="month" name="publishDate">
+            出&nbsp;版&nbsp;&nbsp;时&nbsp;间：<input type="month" name="publishDate" >
         </p>
         <p>
             <span class="version-icon">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-            印&nbsp;刷&nbsp;&nbsp;版&nbsp;本：<input type="text" name="version">
+            印&nbsp;刷&nbsp;&nbsp;版&nbsp;本：<input type="text" name="version" autocomplete="off" disableautocomplete>
         </p>
         <p>
             <span class="condition-icon">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -87,7 +87,7 @@
         </p>
         <p>
             <span class="desc-icon">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-            书&nbsp;本&nbsp;&nbsp;描&nbsp;述：<input type="text" name="description">
+            书&nbsp;本&nbsp;&nbsp;描&nbsp;述：<input type="text" name="description" autocomplete="off" disableautocomplete>
         </p>
 
         <input type="button" class="submit-btn" id="book-submit" value="提交">

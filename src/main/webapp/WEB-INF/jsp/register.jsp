@@ -14,9 +14,9 @@
     <h2>请注册</h2>
     <br />
     <form>
-        <input type="text" id="studentid" class="userName" placeholder="学号"><br/>
-        <input type="password" id="password" class="password" placeholder="密码"><br/>
-        <input type="password" id="password2" class="password" placeholder="请确认密码"><br/>
+        <input type="text" id="studentid" class="userName" placeholder="学号" autocomplete="off" disableautocomplete><br/>
+        <input type="password" id="password" class="password" placeholder="密码" autocomplete="off" disableautocomplete><br/>
+        <input type="password" id="password2" class="password" placeholder="请确认密码" autocomplete="off" disableautocomplete><br/>
         <button class="loginBtn" id="register-button" type="submit">注册</button>
     </form>
     <p id="errorInfo"></p>
@@ -52,6 +52,7 @@
                 success: function (result) {
                     if (result.resultCode == 200) {
                         event.preventDefault();
+                        alert("注册成功！");
                         location.href = "/home.do";
                     } else {
                         event.preventDefault();

@@ -20,7 +20,7 @@
             <div class="nav-search">
                 <a href="home.do"><img class="logo" src="<%=request.getContextPath()%>/img/logo2.png"></a>
                 <div class="search-form">
-                    <input id="search-input" name="name" type="search" class="searchIn" placeholder="搜图书...">
+                    <input id="search-input" name="name" type="search" class="searchIn" placeholder="搜图书..." autocomplete="off" disableautocomplete>
                     <a href="#" class="search-logo">| &nbsp;<img src="<%=request.getContextPath()%>/img/search.png"></a>
                     <button type="submit" id="search-button" class="searchBtn">搜索</button>
                 </div>

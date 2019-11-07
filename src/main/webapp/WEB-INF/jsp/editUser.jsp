@@ -48,25 +48,25 @@
 
 <p>
     <span class="name-icon">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-    姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：<input type="text" name="name" value="${user.getName()}" id="userName">
+    姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：<input type="text" name="name" value="${user.getName()}" id="userName" autocomplete="off" disableautocomplete>
 </p>
 <p>
     <span class="name-icon">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-    姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：<input type="text" name="sex" value="${user.getSex()}" id="userSex">
+    姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;别：<input type="text" name="sex" value="${user.getSex()}" id="userSex" autocomplete="off" disableautocomplete>
 
 </select>
 </p>
 <p>
     <span class="name-icon">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-    电&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;话：<input type="text" name="tel" value="${user.getTel()}" id="userTel">
+    电&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;话：<input type="text" name="tel" value="${user.getTel()}" id="userTel" autocomplete="off" disableautocomplete>
 </p>
 <p>
     <span class="name-icon">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-    地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址：<input type="text" name="address" value="${user.getAddress()}" id="userAddress">
+    地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址：<input type="text" name="address" value="${user.getAddress()}" id="userAddress" autocomplete="off" disableautocomplete>
 </p>
 <p>
     <span class="press-icon">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-    专&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;业：<input type="text" name="major" value="${user.getMajor()}" id="userMajor">
+    专&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;业：<input type="text" name="major" value="${user.getMajor()}" id="userMajor" autocomplete="off" disableautocomplete>
 </p>
 
 <input type="button" class="submit-btn" id="user-submit" value="提交">

@@ -50,11 +50,11 @@
         </p>
         <p>
             <span class="author-icon">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-            作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;者：<input type="text" name="author">
+            作&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;者：<input type="text" name="author" autocomplete="off" disableautocomplete>
         </p>
         <p>
             <span class="press-icon">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-            出&nbsp;&nbsp;&nbsp;&nbsp;版&nbsp;&nbsp;&nbsp;社：<input type="text" name="press">
+            出&nbsp;&nbsp;&nbsp;&nbsp;版&nbsp;&nbsp;&nbsp;社：<input type="text" name="press" autocomplete="off" disableautocomplete>
         </p>
         <input type="button" class="submit-btn" id="book-submit" value="提交">
     </form>
